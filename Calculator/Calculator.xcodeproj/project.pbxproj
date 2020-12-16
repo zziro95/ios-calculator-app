@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BD347112589FF9B00712492 /* BinaryCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD347102589FF9B00712492 /* BinaryCalculator.swift */; };
 		8BE47DAD25866F4D0069A44F /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE47DA725866ED80069A44F /* Stack.swift */; };
 		8BE47DB0258670420069A44F /* DecimalCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE47DAF258670420069A44F /* DecimalCalculator.swift */; };
 		8BE47DB6258674560069A44F /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE47DB5258674560069A44F /* Protocol.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8BD347102589FF9B00712492 /* BinaryCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryCalculator.swift; sourceTree = "<group>"; };
 		8BE47DA725866ED80069A44F /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		8BE47DAF258670420069A44F /* DecimalCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalCalculator.swift; sourceTree = "<group>"; };
 		8BE47DB5258674560069A44F /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 				8BE47DA725866ED80069A44F /* Stack.swift */,
 				8BE47DB5258674560069A44F /* Protocol.swift */,
 				8BE47DAF258670420069A44F /* DecimalCalculator.swift */,
+				8BD347102589FF9B00712492 /* BinaryCalculator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD347112589FF9B00712492 /* BinaryCalculator.swift in Sources */,
 				8BE47DB0258670420069A44F /* DecimalCalculator.swift in Sources */,
 				8BE47DAD25866F4D0069A44F /* Stack.swift in Sources */,
 				C713D9462570E5EB001C3AFC /* ViewController.swift in Sources */,
