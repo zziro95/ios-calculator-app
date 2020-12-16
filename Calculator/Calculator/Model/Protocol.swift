@@ -8,7 +8,7 @@
 import Foundation
 
 protocol Containing {
-    associatedtype T: BinaryInteger
+    associatedtype T
     func add(_ formula: inout [T]) -> T
     func subtract(_ formula: inout [T]) -> T
     mutating func sum() -> T
