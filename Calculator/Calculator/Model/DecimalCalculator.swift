@@ -36,7 +36,7 @@ struct DecimalCalculator: Containing {
     }
     
     mutating func sum() -> Double {
-        return calculatePostfix()
+        return calculatePostfix() >= 1000000000 ? Double(Int(calculatePostfix()) % 10) : calculatePostfix()
     }
     
     mutating func clear() {
@@ -113,4 +113,3 @@ extension DecimalCalculator {
         return typeConvertedPostfixFormula.last ?? 0
     }
 }
-
