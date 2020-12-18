@@ -36,7 +36,7 @@ struct DecimalCalculator: Containing {
     }
     
     mutating func sum() -> Double {
-        return calculatePostfix() >= 1000000000 ? Double(Int(calculatePostfix()) % 1000000000) : calculatePostfix()
+        return calculatePostfix()
     }
     
     mutating func clear() {
@@ -65,20 +65,7 @@ extension DecimalCalculator {
             if Double(element) != nil {
                 postfixFormula.append(element)
             } else {
-                if !temporaryStorage.isEmpty && prioritize(temporaryStorage.last ?? "") >= prioritize(element) {
-                    postfixFormula.append(temporaryStorage.removeLast())
-                    if prioritize(element) > prioritize(temporaryStorage.last ?? "") {
-                        temporaryStorage.append(element)
-                    } else {
-                        postfixFormula.append(temporaryStorage.popLast() ?? "")
-                        temporaryStorage.append(element)
-                    }
-                    print(temporaryStorage)
-                    
-                } else {
-                    temporaryStorage.append(element)
-                    print(temporaryStorage)
-                }
+                checkPrioritize(temporaryStack: &temporaryStorage, formulaStack: &postfixFormula, operator: element)
             }
         }
         while !temporaryStorage.isEmpty {
@@ -87,6 +74,18 @@ extension DecimalCalculator {
         return postfixFormula
     }
     
+    private mutating func checkPrioritize(temporaryStack: inout [String], formulaStack: inout [String], `operator`: String) {
+        if !temporaryStack.isEmpty && prioritize(temporaryStack.last ?? "") >= prioritize(`operator`) {
+            formulaStack.append(temporaryStack.removeLast())
+            if prioritize(`operator`) > prioritize(temporaryStack.last ?? "") {
+                temporaryStack.append(`operator`)
+            } else {
+                formulaStack.append(temporaryStack.popLast() ?? "")
+                temporaryStack.append(`operator`)
+            }
+        }
+        temporaryStack.append(`operator`)
+    }
     
     private mutating func calculatePostfix() -> Double {
         let formula = convertInfixToPostfix()
@@ -110,6 +109,6 @@ extension DecimalCalculator {
                 }
             }
         }
-        return typeConvertedPostfixFormula.last ?? 0
+        return typeConvertedPostfixFormula.last ?? Double.nan
     }
 }
